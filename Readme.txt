@@ -1,1 +1,1 @@
-Changing the text to EngLIs
+Changing the text to English
