@@ -14,15 +14,15 @@
     typedNumber1 = Convert.ToDecimal(Console.ReadLine());
 
 
-    Console.WriteLine("Please enter the second number:");
+    Console.WriteLine("Please enter the second number :");
     //typedNumer2 = Convert.ToDecimal(Console.ReadLine());
 
     decimal.TryParse(Console.ReadLine(), out typedNumber2);
 
     Console.WriteLine("Please select the operation you want to perform:");
 
-    Console.WriteLine("1. Addition");
-    Console.WriteLine("2. Subtraction");
+    Console.WriteLine("1.  Addition");
+    Console.WriteLine("2.  Subtraction");
     Console.WriteLine("3. Multiplication");
     Console.WriteLine("4. Division");
     Console.WriteLine("5. Exit");
