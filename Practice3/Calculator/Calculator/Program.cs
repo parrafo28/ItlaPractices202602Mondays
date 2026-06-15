@@ -1,11 +1,21 @@
 ﻿try
 {
 
-    decimal[] typedNumers = new decimal[2];
+    //decimal[] typedNumers = new decimal[2];
+    List<decimal> typedNumers = new List<decimal>();
+
+    //knowing lists
+    //typedNumers.Add(15);
+    //typedNumers.Add(150);
+
+    //Console.WriteLine($"The first number is: {typedNumers[0]}");
+     
+
     decimal result = 0;
     int typedOption = 0;
-    int wantToContinue = 1;
-
+    //int wantToContinue = 1;
+    int wantToContinue = 0;
+    bool running = true;
     /*
     //arrays with fixed size of 5
     int[] ints = new int[5];
@@ -72,100 +82,162 @@
 
 
     Console.WriteLine("Welcome to the calculator!");
-    Console.WriteLine("Please enter the first number:");
 
-
-    typedNumers[0] = Convert.ToDecimal(Console.ReadLine());
-
-
-    //Console.WriteLine("Please enter the second number:");
-
-    //decimal.TryParse(Console.ReadLine(), out typedNumers[1]);
-
-    //Console.WriteLine("Want to continue typing more numbers? 1. yes, 2.No");
-
-    //wantToContinue = int.Parse(Console.ReadLine());
-
-    //if (wantToContinue == 1 || wantToContinue == 2)
-    //{
-    //    Console.WriteLine("Please enter the third number:");
-    //    decimal.TryParse(Console.ReadLine(), out decimal thirdNumber);
-    //    typedNumers = new decimal[] { typedNumers[0], typedNumers[1], thirdNumber };
-    //}
-    //else
-    //{
-    //    Console.WriteLine("You have selected to continue with only two numbers.");
-    //}
-
-    //if (  !( wantToContinue == 1 || wantToContinue == 2)  )
-    //{
-    //    Console.WriteLine("You have selected to continue with only two numbers.");
-
-    //}
-    //else
-    //{
-    //    Console.WriteLine("Please enter the third number:");
-    //    decimal.TryParse(Console.ReadLine(), out decimal thirdNumber);
-    //    typedNumers = new decimal[] { typedNumers[0], typedNumers[1], thirdNumber };
-
-    //}
-
-    while (wantToContinue == 1)
+    // while (running == true)
+    while (running)
     {
-        Console.WriteLine("Please enter the next number:");
-        decimal.TryParse(Console.ReadLine(), out decimal nextNumber);
-        //create a new array with the size of the old array + 1
-        decimal[] newArray = new decimal[typedNumers.Length + 1];
-        //copy the old array to the new array
-        for (int i = 0; i < typedNumers.Length; i++) //i = i+1
+
+        Console.WriteLine("Please enter the first number:");
+
+        //typedNumers.Add(0);
+        //typedNumers[0] = Convert.ToDecimal(Console.ReadLine());
+        typedNumers.Add(Convert.ToDecimal(Console.ReadLine())); 
+
+        //Console.WriteLine("Please enter the second number:");
+
+        //decimal.TryParse(Console.ReadLine(), out typedNumers[1]);
+
+        //Console.WriteLine("Want to continue typing more numbers? 1. yes, 2.No");
+
+        //wantToContinue = int.Parse(Console.ReadLine());
+
+        //if (wantToContinue == 1 || wantToContinue == 2)
+        //{
+        //    Console.WriteLine("Please enter the third number:");
+        //    decimal.TryParse(Console.ReadLine(), out decimal thirdNumber);
+        //    typedNumers = new decimal[] { typedNumers[0], typedNumers[1], thirdNumber };
+        //}
+        //else
+        //{
+        //    Console.WriteLine("You have selected to continue with only two numbers.");
+        //}
+
+        //if (  !( wantToContinue == 1 || wantToContinue == 2)  )
+        //{
+        //    Console.WriteLine("You have selected to continue with only two numbers.");
+
+        //}
+        //else
+        //{
+        //    Console.WriteLine("Please enter the third number:");
+        //    decimal.TryParse(Console.ReadLine(), out decimal thirdNumber);
+        //    typedNumers = new decimal[] { typedNumers[0], typedNumers[1], thirdNumber };
+
+        //}
+
+        //while (wantToContinue == 1)
+        //{
+        //    Console.WriteLine("Please enter the next number:");
+        //    decimal.TryParse(Console.ReadLine(), out decimal nextNumber);
+        //    //create a new array with the size of the old array + 1
+        //    decimal[] newArray = new decimal[typedNumers.Length + 1];
+        //    //copy the old array to the new array
+        //    for (int i = 0; i < typedNumers.Length; i++) //i = i+1
+        //    {
+        //        newArray[i] = typedNumers[i];
+        //    }
+        //    //add the new number to the end of the new array
+        //    newArray[newArray.Length - 1] = nextNumber;
+        //    //assign the new array to the old array
+        //    typedNumers = newArray;
+
+        //    Console.WriteLine("Want to continue typing more numbers? 1. yes, 2.No");
+        //    wantToContinue = int.Parse(Console.ReadLine());
+        //}
+
+
+        do
         {
-            newArray[i] = typedNumers[i];
+
+            Console.WriteLine("Please enter the next number:");
+            decimal.TryParse(Console.ReadLine(), out decimal nextNumber);
+            ////create a new array with the size of the old array + 1
+            //decimal[] newArray = new decimal[typedNumers.Length + 1];
+            ////copy the old array to the new array
+            //for (int i = 0; i < typedNumers.Length; i++) //i = i+1
+            //{
+            //    newArray[i] = typedNumers[i];
+            //}
+            ////add the new number to the end of the new array
+            //newArray[newArray.Length - 1] = nextNumber;
+            ////assign the new array to the old array
+            //typedNumers = newArray;
+
+            //typedNumers.Add(0);
+            //typedNumers [typedNumers.Count - 1] = nextNumber;
+
+            typedNumers.Add(nextNumber);
+
+            //decimal[] tempArray = new decimal[typedNumers.Length - 1];
+            //typedNumers.CopyTo(tempArray, 0);
+            //typedNumers[typedNumers.Length - 1] = nextNumber;
+
+            //typedNumers = typedNumers.Append(nextNumber).ToArray();
+            //typedNumers = typedNumers.Concat(new decimal[] { nextNumber }).ToArray();
+
+
+
+            Console.WriteLine("Want to continue typing more numbers? 1. yes, 2.No");
+            wantToContinue = int.Parse(Console.ReadLine());
+
         }
-        //add the new number to the end of the new array
-        newArray[newArray.Length - 1] = nextNumber;
-        //assign the new array to the old array
-        typedNumers = newArray;
-
-        Console.WriteLine("Want to continue typing more numbers? 1. yes, 2.No");
-        wantToContinue = int.Parse(Console.ReadLine());
-    }
-   
+        while (wantToContinue == 1);
 
 
-    Console.WriteLine("Please select the operation you want to perform:");
 
-    Console.WriteLine("1. Addition");
-    Console.WriteLine("2. Subtraction");
-    Console.WriteLine("3. Multiplication");
-    Console.WriteLine("4. Division");
-    Console.WriteLine("5. Exit");
+        Console.WriteLine("Please select the operation you want to perform:");
 
-    typedOption = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("1. Addition");
+        Console.WriteLine("2. Subtraction");
+        Console.WriteLine("3. Multiplication");
+        Console.WriteLine("4. Division");
+        Console.WriteLine("5. Exit");
+
+        typedOption = Convert.ToInt32(Console.ReadLine());
 
 
-    switch (typedOption)
-    {
-        case 1:
-            {
-                result = typedNumers[0] + typedNumers[1];
+        switch (typedOption)
+        {
+            case 1:
+                {
+                    //for (int i = 0; i < typedNumers.Length; i++)
+                    //{
+                    //    result += typedNumers[i];
+                    //}
+                    //for (int i = typedNumers.Length; i < 0; i--)
+                    //{
+                    //    result += typedNumers[i];
+                    //}
+                    foreach (var number in typedNumers)
+                    {
+                        // result = result + number;
+                        result += number;
+                    }
+                    // result = typedNumers[0] + typedNumers[1];
+                    break;
+                }
+            case 2:
+                result = typedNumers[0] - typedNumers[1];
                 break;
-            }
-        case 2:
-            result = typedNumers[0] - typedNumers[1];
-            break;
-        case 3:
-            result = typedNumers[0] * typedNumers[1];
-            break;
-        case 4:
-            result = typedNumers[0] / typedNumers[1];
-            break;
-        default:
-            result = 0;
-            break;
+            case 3:
+                result = typedNumers[0] * typedNumers[1];
+                break;
+            case 4:
+                result = typedNumers[0] / typedNumers[1];
+                break;
+            case 5:
+                running = false;
+                break;
+            default:
+                result = 0;
+                break;
+        }
+
+
+        Console.WriteLine($"The result is: {result}");
+
+
     }
-
-
-    Console.WriteLine($"The result is: {result}");
 
     Console.ReadKey();
 
